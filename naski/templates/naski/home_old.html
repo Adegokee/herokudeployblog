@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style>
+  .home_container{
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+</style>
+<div class="home_container">
+    
+      <div>
+       {% include 'naski/topic_component.html'%}
+      </div>
+    
+    <div>
+        <div>
+
+            <div>
+            <a href="{% url 'createRoom' %}">+ Create Room</a>
+            <p>{{room_count}} rooms available </p>
+            </div>
+            
+         {% include 'naski/feed_component.html' %}
+         
+        </div>
+      </div>
+      
+      
+      <div>
+     
+     {% include 'naski/activity_component.html' %}     
+       
+      </div>
+</div>
+{% endblock content %}
+    
